@@ -27,11 +27,11 @@ const questions = [
         id: 3,
         text: "3️) Quando o professor propõe um desafio, você prefere:",
         options: [
-            { value: 'A', text: 'Pode colocar a mão na massa' },
-            { value: 'B', text: 'Pode usar tecnologia para resolver' },
-            { value: 'C', text: 'Pode criar algo diferente' },
-            { value: 'D', text: 'Pode investigar e testar hipóteses' },
-            { value: 'E', text: 'Pode trabalhar e discutir em grupo' }
+            { value: 'A', text: 'Poder colocar a mão na massa' },
+            { value: 'B', text: 'Poder usar tecnologia para resolver' },
+            { value: 'C', text: 'Poder criar algo diferente' },
+            { value: 'D', text: 'Poder investigar e testar hipóteses' },
+            { value: 'E', text: 'Poder trabalhar e discutir em grupo' }
         ]
     },
     {
@@ -117,27 +117,27 @@ const questions = [
 const profiles = {
     'A': {
         name: 'MAKER',
-        icon: '🔧',
+        image: 'img/Maker.png',
         description: 'Você gosta de colocar a mão na massa, construir e experimentar. Prefere aprender fazendo e adora criar protótipos ou solucionar problemas práticos.'
     },
     'B': {
         name: 'TECNOLÓGICO',
-        icon: '💻',
+        image: 'img/Tecnologico.png',
         description: 'Você adora tecnologia, programação e tudo que envolve inovação digital. Gosta de resolver desafios usando computadores e novas ferramentas.'
     },
     'C': {
         name: 'CRIATIVO',
-        icon: '🎨',
+        image: 'img/Criativo.png',
         description: 'Você tem uma mente criativa e adora expressar ideias de formas originais. Gosta de criar, inventar e pensar fora da caixa para resolver problemas.'
     },
     'D': {
         name: 'CIENTISTA',
-        icon: '🔬',
+        image: 'img/Cientista.png',
         description: 'Você tem um olhar investigativo, gosta de pesquisar, experimentar e entender como as coisas funcionam. Curte solucionar dúvidas e explorar novos conhecimentos.'
     },
     'E': {
         name: 'COMUNICADOR',
-        icon: '📢',
+        image: 'img/Comunicador.png',
         description: 'Você se destaca pelo trabalho em equipe, por apresentar ideias e liderar grupos. Prefere aprender conversando, explicando ou orientando outros.'
     }
 };
@@ -290,7 +290,8 @@ async function calculateResult() {
 
         quizData.perfil = profile.name;
 
-        document.getElementById('profile-icon').textContent = profile.icon;
+        document.getElementById('profile-icon').innerHTML =
+        `<img src="${profile.image}" class="profile-image">`;    
         document.getElementById('profile-name').textContent = profile.name;
         document.getElementById('profile-description').textContent = profile.description;
 
@@ -309,11 +310,6 @@ async function calculateResult() {
 
 async function saveToGoogleSheets(data) {
     const saveMessage = document.getElementById('save-message');
-    
-    if (SCRIPT_URL === SCRIPT_URL) {
-        saveMessage.innerHTML = '<div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid #ffeaa7;">⚠️ Configure a URL do Google Apps Script para salvar os dados</div>';
-        return;
-    }
 
     saveMessage.innerHTML = '<div style="color: #666; margin-top: 15px;">Salvando dados... <span class="loading"></span></div>';
 
