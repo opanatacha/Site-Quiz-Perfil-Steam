@@ -58,6 +58,8 @@ Isso permite:
 ✔ Análise de perfis predominantes
 ✔ Acompanhamento do desenvolvimento dos alunos
 
+---
+
 ## 📦 Como Utilizar
 
 1. Baixe o arquivo `index.html`
@@ -74,7 +76,7 @@ Isso permite:
 
 ---
 
-## 👩‍🏫 Desenvolvido por
+## 👩‍🏫 Desenvolvido por Natacha Carvalho
 
 Projeto criado para uso pedagógico no Colaboratório.
 
