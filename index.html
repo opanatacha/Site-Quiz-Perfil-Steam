@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" type="text/javascript"></script>    
+    <title>Quiz Perfil do Aluno STEAM</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Tela de Introdução -->
+        <div id="intro-screen">
+            <h1>Quiz Perfil do Aluno STEAM</h1>
+            <p class="subtitle">Descubra mais sobre quem é você durante as aulas no colaboratório!</p>
+            
+            <div class="intro-section">
+                <p style="text-align: center; font-size: 1.1em; margin-bottom: 20px;">
+                    Responda às perguntas a seguir para saber qual perfil combina com você.
+                </p>
+            </div>
+
+            <div class="form-group">
+                <label for="nome">Nome <span class="required">*</span></label>
+                <input type="text" id="nome" required>
+                <span class="error" id="nome-error">Por favor, preencha seu nome</span>
+            </div>
+
+            <div class="form-group">
+                <label for="turma">Turma <span class="required">*</span></label>
+                <input type="text" id="turma" required>
+                <span class="error" id="turma-error">Por favor, preencha sua turma</span>
+            </div>
+
+            <button onclick="startQuiz()">Iniciar Quiz</button>
+        </div>
+
+        <!-- Tela do Quiz -->
+        <div id="quiz-screen" class="hidden">
+            <h1>Quiz Aluno STEAM</h1>
+            <div class="student-info" id="student-info"></div>
+            <div id="questions-container"></div>
+            <button id="submit-btn" onclick="calculateResult()">Ver meu perfil</button>
+        </div>
+
+        <!-- Tela de Resultado -->
+        <div id="result-screen" class="hidden">
+            <div class="result">
+                <h2>Parabéns!</h2>
+                <div class="profile-icon" id="profile-icon"></div>
+                <div class="profile-name" id="profile-name"></div>
+                <div class="profile-description" id="profile-description"></div>
+                <div id="save-message"></div>
+                <button class="restart-btn" onclick="restartQuiz()">Fazer novamente</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
